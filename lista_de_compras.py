@@ -27,6 +27,9 @@ while True:
         #Solicitando o numero do item para exclusão e printando o resultado pós deletado
         del_item = input('Qual item deseja excluir?')
         del_item = int(del_item)
+        lista_de_compras.pop(del_item)
+        
+        
 
         #Evitando erro 'out of range'
     # if del_item > indice:       
@@ -34,8 +37,7 @@ while True:
     #     break
         
     else:
-        lista_de_compras.pop(del_item)
-        print(lista_de_compras)
+        
         continue
 
     
