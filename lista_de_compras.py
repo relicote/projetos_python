@@ -29,9 +29,9 @@ while True:
         del_item = int(del_item)
 
         #Evitando erro 'out of range'
-    if del_item > indice:       
-        print('Item não encontrado na lista. Favor inserir um numero valido.')
-        break
+    # if del_item > indice:       
+    #     print('Item não encontrado na lista. Favor inserir um numero valido.')
+    #     break
         
     else:
         lista_de_compras.pop(del_item)
