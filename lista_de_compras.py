@@ -46,8 +46,8 @@ while True:
 
         del_item = int(del_item)
         #Condição para conter o 'out of range' 
-        if del_item > lista_de_compras: 
-            while del_item > lista_de_compras:     
+        if del_item > indice or del_item < indice: 
+            while del_item > indice or del_item < indice:   
                 print('Item não encontrado na lista. Favor inserir um numero valido.')
                 del_item = input('Qual item deseja excluir?')
 
