@@ -28,16 +28,22 @@ while True:
         del_item = input('Qual item deseja excluir?')
         del_item = int(del_item)
         lista_de_compras.pop(del_item)
-        
-        
 
         #Evitando erro 'out of range'
     # if del_item > indice:       
     #     print('Item não encontrado na lista. Favor inserir um numero valido.')
     #     break
+    visu = input('Deseja visualizar sua lista?')
+    
+    if visu == 's':
+        for indice, nome in enumerate(lista_de_compras):
+            print(f'{indice} - {nome} ')
+
         
     else:
-        
         continue
 
+    
+    
+       
     
