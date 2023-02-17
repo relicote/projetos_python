@@ -4,7 +4,9 @@ o usuário deve ter a possibilidade de
 inserir, apagar e listar os valores da sua lista
 Não permita que  o programa quebre com erros de indices inexistentes na lsita  
 """
-
+#menu inicial
+#digitar apenas 1 ou 2
+import os
 lista_de_compras = []
 
 while True:
@@ -52,6 +54,9 @@ while True:
                 print('Item não encontrado na lista. Favor inserir um numero valido.')
                 del_item = input('Qual item deseja excluir?')
                 del_item = int(del_item)
+            # if del_item > indice or del_item < indice:
+            #     break
+                
 
         lista_de_compras.pop(del_item)
 
@@ -64,7 +69,6 @@ while True:
             visu = input('Deseja visualizar sua lista? [1] - SIM [2] - NÃO: ')
 
     visu = int(visu)
-
     
     #Condição para visualizar a lista
     if visu == 1:
