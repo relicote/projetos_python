@@ -56,16 +56,18 @@ while True:
         lista_de_compras.pop(del_item)
 
 
-   
-    visu = input('Deseja visualizar sua lista?')
+   #Condição para digitar somente numeros
+    visu = input('Deseja visualizar sua lista? [1] - SIM [2] - NÃO: ')
     if visu.isnumeric() == False:
         while visu.isnumeric() == False:
+            print('Digite apenas numeros!')
             visu = input('Deseja visualizar sua lista? [1] - SIM [2] - NÃO: ')
 
-
     visu = int(visu)
+
     
-    if visu == 's':
+    #Condição para visualizar a lista
+    if visu == 1:
         for indice, nome in enumerate(lista_de_compras):
             print(f'{indice} - {nome} ')
 
