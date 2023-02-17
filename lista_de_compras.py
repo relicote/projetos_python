@@ -19,6 +19,15 @@ while True:
     # Condição para excluir item da lista
     del_item = input('Deseja deletar algum item da lista?\
         [1] - Sim ou [2] - Não.')
+
+    # Condição para receber somente numeros
+    if del_item.isnumeric() == False:
+        while del_item.isnumeric() ==False:
+            print('Digite apenas numeros!')
+            del_item = input('Deseja deletar algum item da lista?\
+        [1] - Sim ou [2] - Não.')
+
+        
     del_item = int(del_item)
 
     if del_item == 1:
@@ -28,13 +37,24 @@ while True:
         
         #Solicitando o numero do item para exclusão e printando o resultado pós deletado
         del_item = input('Qual item deseja excluir?')
+
+        #Condição para receber somente numeros
+        if del_item.isnumeric() == False:
+            while del_item.isnumeric() ==False:
+                print('Digite apenas numeros!')
+                del_item = input('Qual item deseja excluir?')
+
         del_item = int(del_item)
+        #Condição para conter o 'out of range' 
+        if del_item > lista_de_compras: 
+            while del_item > lista_de_compras:     
+                print('Item não encontrado na lista. Favor inserir um numero valido.')
+                del_item = input('Qual item deseja excluir?')
+
         lista_de_compras.pop(del_item)
 
-        #Evitando erro 'out of range'
-    # if del_item > indice:       
-    #     print('Item não encontrado na lista. Favor inserir um numero valido.')
-    #     break
+
+   
     visu = input('Deseja visualizar sua lista?')
     
     if visu == 's':
