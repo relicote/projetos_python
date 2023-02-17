@@ -17,9 +17,11 @@ while True:
 
 
     # Condição para excluir item da lista
-    del_item = input('Deseja deletar algum item da lista?')
+    del_item = input('Deseja deletar algum item da lista?\
+        [1] - Sim ou [2] - Não.')
+    del_item = int(del_item)
 
-    if del_item == 'Sim' or del_item == 'sim':
+    if del_item == 1:
         #Numerando a lista para o usuário visualizar o item desejado
         for indice, nome in enumerate(lista_de_compras):
             print(f'{indice} - {nome} ')
