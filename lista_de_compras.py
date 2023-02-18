@@ -5,10 +5,9 @@ inserir, apagar e listar os valores da sua lista
 Não permita que  o programa quebre com erros de indices inexistentes na lsita  
 """
 #menu inicial
-#digitar apenas 1 ou 2 (corrigir entrada para somente int após o primeiro aviso)
+#digitar apenas 1 ou 2 (adicionar if de 1 ou 2 dentro do laço while)
 import os
 lista_de_compras = []
-
 while True:
     # Solicitando o item para o usuário
     item = input('Digite um item para adicionar a lista: ')
@@ -39,7 +38,7 @@ while True:
                         print('Digite apenas numeros!')
                         del_item = input('Deseja deletar algum item da lista?\
                     [1] - Sim ou [2] - Não.')
-                        del_item = int(del_item)
+            break
 
     
 
