@@ -5,7 +5,7 @@ inserir, apagar e listar os valores da sua lista
 Não permita que  o programa quebre com erros de indices inexistentes na lsita  
 """
 #menu inicial
-#digitar apenas 1 ou 2
+#digitar apenas 1 ou 2 (corrigir entrada para somente int após o primeiro aviso)
 import os
 lista_de_compras = []
 
@@ -20,7 +20,7 @@ while True:
     del_item = input('Deseja deletar algum item da lista?\
         [1] - Sim ou [2] - Não.')
 
-    # Condição para receber somente numeros
+    #Condição para receber somente numeros
     if del_item.isnumeric() == False:
         while del_item.isnumeric() ==False:
             print('Digite apenas numeros!')
