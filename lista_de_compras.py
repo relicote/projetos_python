@@ -15,8 +15,6 @@ while True:
 
     # Adicionando o item a lista de compras (repetidor)
     lista_de_compras.append(item)
-    print(lista_de_compras)
-
 
     # Condição para excluir item da lista
     del_item = input('Deseja deletar algum item da lista?\
@@ -27,10 +25,17 @@ while True:
         while del_item.isnumeric() ==False:
             print('Digite apenas numeros!')
             del_item = input('Deseja deletar algum item da lista?\
-        [1] - Sim ou [2] - Não.')
-
+        [1] - Sim ou [2] - Não.')      
         
     del_item = int(del_item)
+
+    #Condição para manter o usuário entre 1 ou 2
+    if del_item <1 or del_item > 2:
+        while del_item <1 or del_item > 2:
+            print('Digite apenas numeros!') 
+            del_item = input('Deseja deletar algum item da lista?\
+        [1] - Sim ou [2] - Não.')  
+            del_item = int(del_item)
 
     if del_item == 1:
         #Numerando a lista para o usuário visualizar o item desejado
@@ -69,9 +74,16 @@ while True:
         while visu.isnumeric() == False:
             print('Digite apenas numeros!')
             visu = input('Deseja visualizar sua lista? [1] - SIM [2] - NÃO: ')
-
+    
     visu = int(visu)
     
+    #Condição para manter o usuário entre 1 ou 2
+    if visu <1 or del_item > 2:
+        while visu <1 or del_item > 2:
+            print('Digite apenas numeros!') 
+            visu = input('Deseja visualizar sua lista? [1] - SIM [2] - NÃO: ')  
+            visu = int(visu)
+
     #Condição para visualizar a lista
     if visu == 1:
         for indice, nome in enumerate(lista_de_compras):
