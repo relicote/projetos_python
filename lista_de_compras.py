@@ -53,10 +53,12 @@ while True:
             while del_item > indice:   
                 print('Item não encontrado na lista. Favor inserir um numero valido.')
                 del_item = input('Qual item deseja excluir?')
+                #Laço para não inserir texto
+                while del_item.isnumeric() == False:
+                    print('Digite apenas numeros!')
+                    del_item = input('Qual item deseja excluir?')
+
                 del_item = int(del_item)
-            # if del_item > indice or del_item < indice:
-            #     break
-                
 
         lista_de_compras.pop(del_item)
 
