@@ -34,8 +34,14 @@ while True:
             while del_item <1 or del_item > 2:
                 print('Digite apenas numeros!') 
                 del_item = input('Deseja deletar algum item da lista?\
-                [1] - Sim ou [2] - Não.')  
-    del_item = int(del_item)
+                [1] - Sim ou [2] - Não.')
+                while del_item.isnumeric() == False:
+                        print('Digite apenas numeros!')
+                        del_item = input('Deseja deletar algum item da lista?\
+                    [1] - Sim ou [2] - Não.')
+                        del_item = int(del_item)
+
+    
 
     if del_item == 1:
         #Numerando a lista para o usuário visualizar o item desejado
