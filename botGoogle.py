@@ -19,8 +19,10 @@ driver = webdriver.Chrome()
 driver.get('https://www.google.com.br/maps')
 time.sleep(5)
 
-driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('mooca')
+driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('comercios proximos')
 driver.find_element(By.XPATH,'//*[@id="searchbox-searchbutton"]').click()
+
+card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]')
 
 
 time.sleep(15)
