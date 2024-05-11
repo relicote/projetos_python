@@ -22,7 +22,13 @@ time.sleep(5)
 driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('comercios proximos')
 driver.find_element(By.XPATH,'//*[@id="searchbox-searchbutton"]').click()
 
+time.sleep(5)
+
 card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]')
+
+for i in range(len(card)):
+    if i == 0 or i == 1:
+        continue
 
 
 time.sleep(15)
