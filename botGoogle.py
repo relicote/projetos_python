@@ -1,7 +1,10 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
-import pandas as pd
+from selenium.webdriver.common.keys import Keys 
 from selenium.webdriver.chrome.options import Options
+
+
+import pandas as pd
 import time
 # import requests
 
@@ -38,6 +41,9 @@ for i in range(13):
 
     
     tipoServico = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[1]/span').text
+
+
+    driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]').send_keys(Keys.PAGE_DOWN)
 
    
     y = y + 2
