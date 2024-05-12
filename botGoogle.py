@@ -42,6 +42,8 @@ for i in range(13):
     
     tipoServico = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[1]/span[1]/span').text
 
+    numTelefone = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[2]/span[2]/span[2]').text
+
 
     driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]').send_keys(Keys.PAGE_DOWN)
 
@@ -49,9 +51,10 @@ for i in range(13):
     y = y + 2
     empresa.append(nomeEmpresa)
     servico.append(tipoServico)
+    telefone.append(numTelefone)
 
 
-    print(tipoServico)
 
-
-time.sleep(15)
+print(empresa)
+print(servico)
+print(telefone)
