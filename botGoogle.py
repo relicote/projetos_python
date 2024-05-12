@@ -44,6 +44,7 @@ for i in range(13):
 
     numTelefone = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[4]/div[2]/span[2]/span[2]').text
 
+    # time sleep para pegar telefone após scroll
 
     driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]').send_keys(Keys.PAGE_DOWN)
 
