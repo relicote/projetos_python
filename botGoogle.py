@@ -28,20 +28,19 @@ card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div
 
 y = 3
 
-for i in range(12):
+for i in range(13):
     # if i == 0 or i == 1:
     #     continue
 
 
     driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/a')
 
-    nomeEmpresa = driver.find_element(By.XPATH, '//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[3]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[1]/div[2]').text
+    nomeEmpresa = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[1]/div[2]').text
    
     y = y + 2
 
     empresa.append(nomeEmpresa)
 
-    print(card)
     print(empresa)
 
 
