@@ -1,17 +1,18 @@
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.common.keys import Keys 
-from selenium.webdriver.chrome.options import Options
 from selenium.common.exceptions import NoSuchElementException
-
-
+from pprint import pprint
 import pandas as pd
 import time
-# import requests
 
-empresa = []
-servico = []
-telefone = []
+dados_comercio = {
+    'Empresa': '',
+    'Servico': '',
+    'Telefone': ''
+    }
+
+
 
 WINDOW_SIZE = "1500,900"
 chrome_options = webdriver.ChromeOptions()
@@ -32,7 +33,7 @@ card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div
 
 y = 3
 
-for i in range(21):
+for i in range(5):
     # if i == 0 or i == 1:
     #     continue
 
@@ -62,12 +63,14 @@ for i in range(21):
 
    
     y = y + 2
-    empresa.append(nomeEmpresa)
-    servico.append(tipoServico)
-    telefone.append(numTelefone)
 
+    dados_comercio['Empresa'] = nomeEmpresa
+    dados_comercio['Servico'] = tipoServico
+    dados_comercio['Telefone'] = numTelefone
 
+    pprint(dados_comercio)
 
-print(servico)
-print(empresa)
-print(telefone)
+df = pd.DataFrame(dados_comercio, index=[0])
+df.to_excel('testeBot.xls') 
+
+pprint(df.head)
