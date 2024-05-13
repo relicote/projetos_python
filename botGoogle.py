@@ -71,6 +71,6 @@ for i in range(5):
     pprint(dados_comercio)
 
 df = pd.DataFrame(dados_comercio, index=[0])
-df.to_excel('testeBot.xls') 
+df.to_excel('testeBot.xlsx') 
 
 pprint(df.head)
