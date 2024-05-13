@@ -6,20 +6,16 @@ from pprint import pprint
 import pandas as pd
 import time
 
-dadosExcel = []
-
-dados_comercio = {
-    'Empresa': '',
-    'Servico': '',
-    'Telefone': ''
-    }
+empresa = []
+servico = []
+telefone = []
 
 
 
-WINDOW_SIZE = "1500,900"
+# WINDOW_SIZE = "1500,900"
 chrome_options = webdriver.ChromeOptions()
-# chrome_options.add_argument("--headless")
-chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
+chrome_options.add_argument("--headless")
+# chrome_options.add_argument("--window-size=%s" % WINDOW_SIZE)
 
 driver = webdriver.Chrome()
 
@@ -36,9 +32,7 @@ card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div
 y = 3
 
 for i in range(5):
-    # if i == 0 or i == 1:
-    #     continue
-
+    
 
     driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/a')
     nomeEmpresa = driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/div[2]/div[4]/div[1]/div/div/div[2]/div[1]/div[2]').text
@@ -63,13 +57,20 @@ for i in range(5):
    
     y = y + 2
 
-    dados_comercio['Empresa'] = nomeEmpresa
-    dados_comercio['Servico'] = tipoServico
-    dados_comercio['Telefone'] = numTelefone
+    empresa.append(nomeEmpresa)
+    servico.append(tipoServico)
+    telefone.append(numTelefone)
 
-    pprint(dados_comercio)
+driver.close()
+  
 
-df = pd.DataFrame(dados_comercio, index=[0])
-df.to_excel('testeBot.xlsx') 
 
-pprint(df.head)
+
+df = pd.DataFrame({'Empresa':empresa, 'Servico':servico, 'Telefone':telefone})
+    
+   
+
+print(df.head)
+df.to_excel('testeBot.xlsx')
+
+
