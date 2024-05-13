@@ -22,7 +22,7 @@ driver = webdriver.Chrome()
 driver.get('https://www.google.com.br/maps')
 time.sleep(2)
 
-driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('comercios proximos')
+driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('lojas de tenis')
 driver.find_element(By.XPATH,'//*[@id="searchbox-searchbutton"]').click()
 
 time.sleep(2)
@@ -31,7 +31,7 @@ card = driver.find_element(By.XPATH,'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div
 
 y = 3
 
-for i in range(5):
+for i in range(3):
     
 
     driver.find_element(By.XPATH, f'//*[@id="QA0Szd"]/div/div/div[1]/div[2]/div/div[1]/div/div/div[1]/div[1]/div[{y}]/div/a')
