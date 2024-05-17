@@ -22,7 +22,7 @@ driver = webdriver.Chrome()
 driver.get('https://www.google.com.br/maps')
 time.sleep(2)
 
-driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('lojas de tenis')
+driver.find_element(By.XPATH,'//*[@id="searchboxinput"]').send_keys('nutricionistas proximos')
 driver.find_element(By.XPATH,'//*[@id="searchbox-searchbutton"]').click()
 
 time.sleep(2)
